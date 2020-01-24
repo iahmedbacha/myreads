@@ -5,7 +5,10 @@ import SearchBooksInputWrapper from './SearchBooksInputWrapper';
 const SearchBooksBar = (props) => (
   <div className="search-books-bar">
     <CloseSearch handleCloseSearch={props.handleCloseSearch} />
-    <SearchBooksInputWrapper />
+    <SearchBooksInputWrapper
+      searchBooksInputValue={props.searchBooksInputValue}
+      handleSearchBooksInputOnChange={props.handleSearchBooksInputOnChange}
+    />
   </div>
 );
 

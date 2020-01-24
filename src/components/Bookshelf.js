@@ -5,7 +5,10 @@ import BookshelfBooks from './BookshelfBooks';
 const Bookshelf = (props) => (
   <div className="bookshelf">
     <BookshelfTitle title={props.title} />
-    <BookshelfBooks books={props.books} />
+    <BookshelfBooks
+      books={props.books}
+      handleBookShelfOnChange={props.handleBookShelfOnChange}
+    />
   </div>
 );
 

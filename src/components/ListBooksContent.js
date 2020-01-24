@@ -6,14 +6,17 @@ const ListBooksContent = (props) => (
     <div>
       <Bookshelf
         title='Currently Reading'
+        handleBookShelfOnChange={props.handleBookShelfOnChange}
         books={props.books.filter(book => book.shelf === 'currentlyReading')}
       />
       <Bookshelf
         title='Want to Read'
+        handleBookShelfOnChange={props.handleBookShelfOnChange}
         books={props.books.filter(book => book.shelf === 'wantToRead')}
       />
       <Bookshelf
         title='Read'
+        handleBookShelfOnChange={props.handleBookShelfOnChange}
         books={props.books.filter(book => book.shelf === 'read')}
       />
     </div>
