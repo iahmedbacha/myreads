@@ -6,9 +6,9 @@ import BookAuthors from './BookAuthors';
 const Book = (props) => (
   <li>
     <div className="book">
-      <BookTop />
-      <BookTitle />
-      <BookAuthors />
+      <BookTop thumbnail={props.book.imageLinks.thumbnail} />
+      <BookTitle title={props.book.title} />
+      <BookAuthors authors={props.book.authors} />
     </div>
   </li>
 );

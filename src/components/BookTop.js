@@ -4,7 +4,7 @@ import BookShelfChanger from './BookShelfChanger';
 
 const BookTop = (props) => (
   <div className="book-top">
-    <BookCover />
+    <BookCover thumbnail={props.thumbnail} />
     <BookShelfChanger />
   </div>
 );

@@ -7,7 +7,7 @@ class SearchBooks extends Component {
     return (
       <div className="search-books">
         <SearchBooksBar handleCloseSearch={this.props.handleCloseSearch} />
-        <SearchBooksResults />
+        <SearchBooksResults books={[]}/>
       </div>
     );
   };

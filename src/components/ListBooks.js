@@ -6,7 +6,7 @@ import OpenSearch from './OpenSearch';
 const ListBooks = (props) => (
   <div className="list-books">
     <ListBooksTitle title={props.title} />
-    <ListBooksContent />
+    <ListBooksContent books={props.books} />
     <OpenSearch handleOpenSearch={props.handleOpenSearch} />
   </div>
 );

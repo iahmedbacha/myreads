@@ -5,7 +5,7 @@ import BookshelfBooks from './BookshelfBooks';
 const Bookshelf = (props) => (
   <div className="bookshelf">
     <BookshelfTitle title={props.title} />
-    <BookshelfBooks />
+    <BookshelfBooks books={props.books} />
   </div>
 );
 

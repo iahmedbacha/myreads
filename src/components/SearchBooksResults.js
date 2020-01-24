@@ -3,7 +3,7 @@ import BooksGrid from './BooksGrid';
 
 const SearchBooksResults = (props) => (
   <div className="search-books-results">
-    <BooksGrid />
+    <BooksGrid books={props.books} />
   </div>
 );
 
