@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { debounce } from 'throttle-debounce';
 import * as BooksAPI from './utils/BooksAPI';
 import ListBooks from './components/ListBooks';
 import SearchBooks from './components/SearchBooks';
@@ -69,33 +70,37 @@ class BooksApp extends React.Component {
       searchBooksInputValue: searchBooksInputValue,
     });
     if (searchBooksInputValue !== '') {
-      BooksAPI.search(searchBooksInputValue)
-      .then(books => {
-        if (Array.isArray(books)) {
-          this.setState(currentState => {
-            return {
-              searchBooks: books.map(book => {
-                if (currentState.books.filter(b => b.id === book.id).length > 0) {
-                  return currentState.books.filter(b => b.id === book.id)[0];
-                } else {
-                  book.shelf = 'none';
-                  return book;
-                }
-              })
-            }
-          });
-        } else {
-          this.setState({
-            searchBooks: []
-          });
-        };
-      });
+      this.searchBooks(searchBooksInputValue);
     } else {
       this.setState({
         searchBooks: []
       });
-    }
+    };
   };
+
+  searchBooks = debounce(300, (searchBooksInputValue) => {
+    BooksAPI.search(searchBooksInputValue)
+    .then(books => {
+      if (Array.isArray(books)) {
+        this.setState(currentState => {
+          return {
+            searchBooks: books.map(book => {
+              if (currentState.books.filter(b => b.id === book.id).length > 0) {
+                return currentState.books.filter(b => b.id === book.id)[0];
+              } else {
+                book.shelf = 'none';
+                return book;
+              }
+            })
+          }
+        });
+      } else {
+        this.setState({
+          searchBooks: []
+        });
+      };
+    });
+  });
 
   render() {
     return (
