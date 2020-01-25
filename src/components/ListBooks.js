@@ -11,7 +11,7 @@ const ListBooks = (props) => (
       books={props.books}
       handleBookShelfOnChange={props.handleBookShelfOnChange}
     />
-    <OpenSearch handleOpenSearch={props.handleOpenSearch} />
+    <OpenSearch />
   </div>
 );
 
@@ -19,7 +19,6 @@ ListBooks.propTypes = {
   title: PropTypes.string.isRequired,
   books: PropTypes.array.isRequired,
   handleBookShelfOnChange: PropTypes.func.isRequired,
-  handleOpenSearch: PropTypes.func.isRequired,
 };
 
 export default ListBooks;

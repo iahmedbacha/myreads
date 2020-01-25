@@ -1,14 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const OpenSearch = (props) => (
   <div className="open-search">
-    <button onClick={() => props.handleOpenSearch()}>Add a book</button>
+    <Link to='/search'>
+      <button>Add a book</button>
+    </Link>
   </div>
 );
-
-OpenSearch.prototype = {
-  handleOpenSearch: PropTypes.func.isRequired
-};
 
 export default OpenSearch;

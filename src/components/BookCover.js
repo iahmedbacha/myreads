@@ -13,7 +13,7 @@ const BookCover = (props) => (
 );
 
 BookCover.propTypes = {
-  thumbnail: PropTypes.string.isRequired
+  thumbnail: PropTypes.string
 };
 
 export default BookCover;

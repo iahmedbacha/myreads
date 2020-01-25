@@ -14,7 +14,7 @@ const BookTop = (props) => (
 );
 
 BookTop.propTypes = {
-  thumbnail: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string,
   handleBookShelfOnChange: PropTypes.func.isRequired,
   shelf: PropTypes.string.isRequired
 };

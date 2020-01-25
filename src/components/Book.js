@@ -19,7 +19,7 @@ class Book extends Component {
       <li>
         <div className="book">
           <BookTop
-            thumbnail={this.props.book.imageLinks.thumbnail}
+            thumbnail={this.props.book.imageLinks && this.props.book.imageLinks.thumbnail}
             handleBookShelfOnChange={this.handleBookShelfOnChange}
             shelf={this.props.book.shelf}
           />
