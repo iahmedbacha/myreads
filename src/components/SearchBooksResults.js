@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BooksGrid from './BooksGrid';
 
 const SearchBooksResults = (props) => (
@@ -9,5 +10,10 @@ const SearchBooksResults = (props) => (
     />
   </div>
 );
+
+SearchBooksResults.propTypes = {
+  books: PropTypes.array.isRequired,
+  handleBookShelfOnChange: PropTypes.func.isRequired
+};
 
 export default SearchBooksResults;

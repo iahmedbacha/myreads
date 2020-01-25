@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SearchBooksInputWrapper extends Component {
+  static propTypes = {
+    searchBooksInputValue: PropTypes.string.isRequired,
+    handleSearchBooksInputOnChange: PropTypes.func.isRequired
+  };
+
   handleSearchBooksInputOnChange = (event) => {
     this.props.handleSearchBooksInputOnChange(event.target.value);
   };
