@@ -1,32 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import SearchBooksBar from './SearchBooksBar';
 import SearchBooksResults from './SearchBooksResults';
 
-class SearchBooks extends Component {
-  static propTypes = {
-    handleCloseSearch: PropTypes.func.isRequired, 
-    books: PropTypes.array.isRequired,
-    searchBooksInputValue: PropTypes.string.isRequired,
-    handleSearchBooksInputOnChange: PropTypes.func.isRequired,
-    handleBookShelfOnChange: PropTypes.func.isRequired
-  };
+const SearchBooks = props => {
+  const {
+    handleCloseSearch,
+    searchBooksInputValue,
+    handleSearchBooksInputOnChange,
+    books,
+    handleBookShelfOnChange
+  } = props;
+  return (
+    <div className="search-books">
+      <SearchBooksBar
+        handleCloseSearch={handleCloseSearch}
+        searchBooksInputValue={searchBooksInputValue}
+        handleSearchBooksInputOnChange={handleSearchBooksInputOnChange}
+      />
+      <SearchBooksResults
+        books={books}
+        handleBookShelfOnChange={handleBookShelfOnChange}
+      />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div className="search-books">
-        <SearchBooksBar
-          handleCloseSearch={this.props.handleCloseSearch}
-          searchBooksInputValue={this.props.searchBooksInputValue}
-          handleSearchBooksInputOnChange={this.props.handleSearchBooksInputOnChange}
-        />
-        <SearchBooksResults
-          books={this.props.books}
-          handleBookShelfOnChange={this.props.handleBookShelfOnChange}
-        />
-      </div>
-    );
-  };
+SearchBooks.propTypes = {
+  handleCloseSearch: PropTypes.func.isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  searchBooksInputValue: PropTypes.string.isRequired,
+  handleSearchBooksInputOnChange: PropTypes.func.isRequired,
+  handleBookShelfOnChange: PropTypes.func.isRequired
 };
 
 export default SearchBooks;

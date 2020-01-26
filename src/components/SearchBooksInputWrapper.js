@@ -7,11 +7,13 @@ class SearchBooksInputWrapper extends Component {
     handleSearchBooksInputOnChange: PropTypes.func.isRequired
   };
 
-  handleSearchBooksInputOnChange = (event) => {
-    this.props.handleSearchBooksInputOnChange(event.target.value);
+  handleSearchBooksInputOnChange = event => {
+    const { handleSearchBooksInputOnChange } = this.props;
+    handleSearchBooksInputOnChange(event.target.value);
   };
 
   render() {
+    const { searchBooksInputValue } = this.props;
     return (
       <div className="search-books-input-wrapper">
         {/*
@@ -25,12 +27,12 @@ class SearchBooksInputWrapper extends Component {
         <input
           type="text"
           placeholder="Search by title or author"
-          value={this.props.searchBooksInputValue}
+          value={searchBooksInputValue}
           onChange={this.handleSearchBooksInputOnChange}
         />
       </div>
     );
-  };
-};
+  }
+}
 
 export default SearchBooksInputWrapper;

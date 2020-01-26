@@ -17,15 +17,38 @@ class BooksApp extends React.Component {
     books: [],
     searchBooksInputValue: '',
     searchBooks: []
-  }
+  };
+
+  searchBooks = debounce(300, searchBooksInputValue => {
+    BooksAPI.search(searchBooksInputValue).then(books => {
+      if (Array.isArray(books)) {
+        this.setState(currentState => {
+          return {
+            searchBooks: books.map(book => {
+              if (currentState.books.filter(b => b.id === book.id).length > 0) {
+                return currentState.books.filter(b => b.id === book.id)[0];
+              }
+              const searchBook = book;
+              searchBook.shelf = 'none';
+              return searchBook;
+            })
+          };
+        });
+      } else {
+        this.setState({
+          searchBooks: []
+        });
+      }
+    });
+  });
 
   componentDidMount() {
     BooksAPI.getAll().then(books => {
       this.setState({
-        books: books
-      })
+        books
+      });
     });
-  };
+  }
 
   handleCloseSearch = () => {
     this.setState({
@@ -36,38 +59,44 @@ class BooksApp extends React.Component {
 
   handleBookShelfOnChange = (book, shelf) => {
     BooksAPI.update(book, shelf).then(res => {
-      if ((res[shelf] && res[shelf].includes(book.id))
-      || (shelf === 'none' && !res['currentlyReading'].includes(book.id)
-      && !res['wantToRead'].includes(book.id)
-      && !res['read'].includes(book.id))) { // update successful
+      if (
+        (res[shelf] && res[shelf].includes(book.id)) ||
+        (shelf === 'none' &&
+          !res.currentlyReading.includes(book.id) &&
+          !res.wantToRead.includes(book.id) &&
+          !res.read.includes(book.id))
+      ) {
+        // update successful
         this.setState(currentState => {
           if (shelf === 'none') {
             return {
               books: currentState.books.filter(b => b.id !== book.id)
-            }
-          } else if (currentState.books.filter(b => b.id === book.id).length > 0) {
+            };
+          }
+          if (currentState.books.filter(b => b.id === book.id).length > 0) {
             return {
               books: currentState.books.map(b => {
-                if (b.id === book.id) {
-                  b.shelf = shelf;
-                };
-                return b;
+                const updateBook = b;
+                if (updateBook.id === book.id) {
+                  updateBook.shelf = shelf;
+                }
+                return updateBook;
               })
-            }
-          } else {
-            book.shelf = shelf;
-            return {
-              books: [...currentState.books, book]
-            }
+            };
           }
+          const updateBook = book;
+          updateBook.shelf = shelf;
+          return {
+            books: [...currentState.books, updateBook]
+          };
         });
-      };
+      }
     });
   };
 
-  handleSearchBooksInputOnChange = (searchBooksInputValue) => {
+  handleSearchBooksInputOnChange = searchBooksInputValue => {
     this.setState({
-      searchBooksInputValue: searchBooksInputValue,
+      searchBooksInputValue
     });
     if (searchBooksInputValue !== '') {
       this.searchBooks(searchBooksInputValue);
@@ -75,55 +104,32 @@ class BooksApp extends React.Component {
       this.setState({
         searchBooks: []
       });
-    };
+    }
   };
 
-  searchBooks = debounce(300, (searchBooksInputValue) => {
-    BooksAPI.search(searchBooksInputValue)
-    .then(books => {
-      if (Array.isArray(books)) {
-        this.setState(currentState => {
-          return {
-            searchBooks: books.map(book => {
-              if (currentState.books.filter(b => b.id === book.id).length > 0) {
-                return currentState.books.filter(b => b.id === book.id)[0];
-              } else {
-                book.shelf = 'none';
-                return book;
-              }
-            })
-          }
-        });
-      } else {
-        this.setState({
-          searchBooks: []
-        });
-      };
-    });
-  });
-
   render() {
+    const { books, searchBooks, searchBooksInputValue } = this.state;
     return (
       <div className="app">
-        <Route path='/search'>
-          <SearchBooks
-            handleCloseSearch={this.handleCloseSearch}
-            books={this.state.searchBooks}
-            searchBooksInputValue={this.state.searchBooksInputValue}
-            handleSearchBooksInputOnChange={this.handleSearchBooksInputOnChange}
-            handleBookShelfOnChange={this.handleBookShelfOnChange}
-          />
-        </Route>
-        <Route exact path='/'>
+        <Route exact path="/">
           <ListBooks
-            title='MyReads'
-            books={this.state.books}
+            title="MyReads"
+            books={books}
             handleOpenSearch={this.handleOpenSearch}
             handleBookShelfOnChange={this.handleBookShelfOnChange}
           />
         </Route>
+        <Route path="/search">
+          <SearchBooks
+            handleCloseSearch={this.handleCloseSearch}
+            books={searchBooks}
+            searchBooksInputValue={searchBooksInputValue}
+            handleSearchBooksInputOnChange={this.handleSearchBooksInputOnChange}
+            handleBookShelfOnChange={this.handleBookShelfOnChange}
+          />
+        </Route>
       </div>
-    )
+    );
   }
 }
 

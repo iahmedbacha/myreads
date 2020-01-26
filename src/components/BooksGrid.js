@@ -2,21 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-const BooksGrid = (props) => (
-  <ol className="books-grid">
-    { props.books.map(book =>
+const BooksGrid = props => {
+  const { books } = props;
+  return (
+    <ol className="books-grid">
+      {books.map(book => (
         <Book
           key={book.id}
           book={book}
           handleBookShelfOnChange={props.handleBookShelfOnChange}
         />
-      )
-    }
-  </ol>
-);
+      ))}
+    </ol>
+  );
+};
 
 BooksGrid.propTypes = {
-  books: PropTypes.array.isRequired,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number
+    })
+  ).isRequired,
   handleBookShelfOnChange: PropTypes.func.isRequired
 };
 

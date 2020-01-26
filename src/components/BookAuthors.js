@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookAuthors = (props) => (
-  <div className="book-authors">{props.authors && props.authors.join(', ')}</div>
-);
+const BookAuthors = props => {
+  const { authors } = props;
+  return <div className="book-authors">{authors.join(', ')}</div>;
+};
 
 BookAuthors.propTypes = {
-  authors: PropTypes.array
+  authors: PropTypes.arrayOf(PropTypes.string)
+};
+
+BookAuthors.defaultProps = {
+  authors: []
 };
 
 export default BookAuthors;

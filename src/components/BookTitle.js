@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookTitle = (props) => (
-  <div className="book-title">{props.title}</div>
-);
+const BookTitle = props => {
+  const { title } = props;
+  return <div className="book-title">{title}</div>;
+};
 
 BookTitle.propTypes = {
   title: PropTypes.string.isRequired

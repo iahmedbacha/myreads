@@ -6,29 +6,38 @@ import BookAuthors from './BookAuthors';
 
 class Book extends Component {
   static propTypes = {
-    book: PropTypes.object.isRequired,
+    book: PropTypes.shape({
+      imageLinks: PropTypes.shape({
+        thumbnail: PropTypes.string
+      }),
+      shelf: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      authors: PropTypes.array
+    }).isRequired,
     handleBookShelfOnChange: PropTypes.func.isRequired
   };
 
-  handleBookShelfOnChange = (shelf) => {
-    this.props.handleBookShelfOnChange(this.props.book, shelf);
+  handleBookShelfOnChange = shelf => {
+    const { handleBookShelfOnChange, book } = this.props;
+    handleBookShelfOnChange(book, shelf);
   };
 
   render() {
+    const { book } = this.props;
     return (
       <li>
         <div className="book">
           <BookTop
-            thumbnail={this.props.book.imageLinks && this.props.book.imageLinks.thumbnail}
+            thumbnail={book.imageLinks && book.imageLinks.thumbnail}
             handleBookShelfOnChange={this.handleBookShelfOnChange}
-            shelf={this.props.book.shelf}
+            shelf={book.shelf}
           />
-          <BookTitle title={this.props.book.title} />
-          <BookAuthors authors={this.props.book.authors} />
+          <BookTitle title={book.title} />
+          <BookAuthors authors={book.authors} />
         </div>
       </li>
     );
-  };
-};
+  }
+}
 
 export default Book;

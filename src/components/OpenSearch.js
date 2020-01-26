@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const OpenSearch = (props) => (
+const OpenSearch = () => (
   <div className="open-search">
-    <Link to='/search'>
-      <button>Add a book</button>
+    <Link to="/search">
+      <button type="button">Add a book</button>
     </Link>
   </div>
 );

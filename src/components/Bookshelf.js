@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import BookshelfTitle from './BookshelfTitle';
 import BookshelfBooks from './BookshelfBooks';
 
-const Bookshelf = (props) => (
-  <div className="bookshelf">
-    <BookshelfTitle title={props.title} />
-    <BookshelfBooks
-      books={props.books}
-      handleBookShelfOnChange={props.handleBookShelfOnChange}
-    />
-  </div>
-);
+const Bookshelf = props => {
+  const { title, books, handleBookShelfOnChange } = props;
+  return (
+    <div className="bookshelf">
+      <BookshelfTitle title={title} />
+      <BookshelfBooks
+        books={books}
+        handleBookShelfOnChange={handleBookShelfOnChange}
+      />
+    </div>
+  );
+};
 
 Bookshelf.propTypes = {
   title: PropTypes.string.isRequired,
   handleBookShelfOnChange: PropTypes.func.isRequired,
-  books: PropTypes.array.isRequired
+  books: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Bookshelf;

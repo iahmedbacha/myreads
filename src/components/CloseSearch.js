@@ -8,16 +8,23 @@ class CloseSearch extends Component {
   };
 
   handleCloseSearch = () => {
-    this.props.handleCloseSearch();
+    const { handleCloseSearch } = this.props;
+    handleCloseSearch();
   };
 
   render() {
     return (
-      <Link to='/'>
-        <button className="close-search" onClick={this.handleCloseSearch}>Close</button>
+      <Link to="/">
+        <button
+          type="button"
+          className="close-search"
+          onClick={this.handleCloseSearch}
+        >
+          Close
+        </button>
       </Link>
     );
-  };
-};
+  }
+}
 
 export default CloseSearch;

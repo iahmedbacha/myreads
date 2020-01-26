@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BooksGrid from './BooksGrid';
 
-const SearchBooksResults = (props) => (
-  <div className="search-books-results">
-    <BooksGrid
-      books={props.books}
-      handleBookShelfOnChange={props.handleBookShelfOnChange}
-    />
-  </div>
-);
+const SearchBooksResults = props => {
+  const { books, handleBookShelfOnChange } = props;
+  return (
+    <div className="search-books-results">
+      <BooksGrid
+        books={books}
+        handleBookShelfOnChange={handleBookShelfOnChange}
+      />
+    </div>
+  );
+};
 
 SearchBooksResults.propTypes = {
-  books: PropTypes.array.isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleBookShelfOnChange: PropTypes.func.isRequired
 };
 
