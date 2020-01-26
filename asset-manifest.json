@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/myreads-app/static/css/main.bcafd81e.chunk.css",
-    "main.js": "/myreads-app/static/js/main.ada6400a.chunk.js",
-    "main.js.map": "/myreads-app/static/js/main.ada6400a.chunk.js.map",
+    "main.js": "/myreads-app/static/js/main.98ae6a9a.chunk.js",
+    "main.js.map": "/myreads-app/static/js/main.98ae6a9a.chunk.js.map",
     "runtime-main.js": "/myreads-app/static/js/runtime-main.48a704a7.js",
     "runtime-main.js.map": "/myreads-app/static/js/runtime-main.48a704a7.js.map",
     "static/js/2.f986229f.chunk.js": "/myreads-app/static/js/2.f986229f.chunk.js",
     "static/js/2.f986229f.chunk.js.map": "/myreads-app/static/js/2.f986229f.chunk.js.map",
     "index.html": "/myreads-app/index.html",
-    "precache-manifest.95b0c7f70d05152fe5b40801d1a95b34.js": "/myreads-app/precache-manifest.95b0c7f70d05152fe5b40801d1a95b34.js",
+    "precache-manifest.c6005cc0c84b5220fc689584f04b148d.js": "/myreads-app/precache-manifest.c6005cc0c84b5220fc689584f04b148d.js",
     "service-worker.js": "/myreads-app/service-worker.js",
     "static/css/main.bcafd81e.chunk.css.map": "/myreads-app/static/css/main.bcafd81e.chunk.css.map",
     "static/js/2.f986229f.chunk.js.LICENSE": "/myreads-app/static/js/2.f986229f.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.48a704a7.js",
     "static/js/2.f986229f.chunk.js",
     "static/css/main.bcafd81e.chunk.css",
-    "static/js/main.ada6400a.chunk.js"
+    "static/js/main.98ae6a9a.chunk.js"
   ]
 }
