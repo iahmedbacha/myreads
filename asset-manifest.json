@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/myreads-app/static/css/main.bcafd81e.chunk.css",
+    "main.js": "/myreads-app/static/js/main.1282e6b8.chunk.js",
+    "main.js.map": "/myreads-app/static/js/main.1282e6b8.chunk.js.map",
+    "runtime-main.js": "/myreads-app/static/js/runtime-main.48a704a7.js",
+    "runtime-main.js.map": "/myreads-app/static/js/runtime-main.48a704a7.js.map",
+    "static/js/2.e62ef23f.chunk.js": "/myreads-app/static/js/2.e62ef23f.chunk.js",
+    "static/js/2.e62ef23f.chunk.js.map": "/myreads-app/static/js/2.e62ef23f.chunk.js.map",
+    "index.html": "/myreads-app/index.html",
+    "precache-manifest.ed9398ed582b3ce36040135c958490f0.js": "/myreads-app/precache-manifest.ed9398ed582b3ce36040135c958490f0.js",
+    "service-worker.js": "/myreads-app/service-worker.js",
+    "static/css/main.bcafd81e.chunk.css.map": "/myreads-app/static/css/main.bcafd81e.chunk.css.map",
+    "static/js/2.e62ef23f.chunk.js.LICENSE": "/myreads-app/static/js/2.e62ef23f.chunk.js.LICENSE",
+    "static/media/App.css": "/myreads-app/static/media/arrow-drop-down.9d4e3f36.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48a704a7.js",
+    "static/js/2.e62ef23f.chunk.js",
+    "static/css/main.bcafd81e.chunk.css",
+    "static/js/main.1282e6b8.chunk.js"
+  ]
+}
