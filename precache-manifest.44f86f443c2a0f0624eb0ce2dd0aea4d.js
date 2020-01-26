@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5785f4423e2d49e57fdfa1cf6972365a",
+    "revision": "3c2af0a7b30035c989ea191ba037deb5",
     "url": "/myreads-app/index.html"
   },
   {
-    "revision": "5eab6907fbd79ecbd231",
+    "revision": "1acd98eda90fe1f7ddd7",
     "url": "/myreads-app/static/css/main.bcafd81e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/myreads-app/static/js/2.f986229f.chunk.js.LICENSE"
   },
   {
-    "revision": "5eab6907fbd79ecbd231",
-    "url": "/myreads-app/static/js/main.c99322da.chunk.js"
+    "revision": "1acd98eda90fe1f7ddd7",
+    "url": "/myreads-app/static/js/main.2e42d0d5.chunk.js"
   },
   {
     "revision": "4be6ea9a1b73e4949ecc",
