@@ -14,7 +14,7 @@ class CloseSearch extends Component {
 
   render() {
     return (
-      <Link to={`${process.env.PUBLIC_URL}/`}>
+      <Link to="/">
         <button
           type="button"
           className="close-search"

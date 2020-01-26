@@ -111,7 +111,7 @@ class BooksApp extends React.Component {
     const { books, searchBooks, searchBooksInputValue } = this.state;
     return (
       <div className="app">
-        <Route exact path={`${process.env.PUBLIC_URL}/`}>
+        <Route exact path="/">
           <ListBooks
             title="MyReads"
             books={books}
@@ -119,7 +119,7 @@ class BooksApp extends React.Component {
             handleBookShelfOnChange={this.handleBookShelfOnChange}
           />
         </Route>
-        <Route path={`${process.env.PUBLIC_URL}/search`}>
+        <Route path="/search">
           <SearchBooks
             handleCloseSearch={this.handleCloseSearch}
             books={searchBooks}
