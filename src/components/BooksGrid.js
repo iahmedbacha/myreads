@@ -20,7 +20,7 @@ const BooksGrid = props => {
 BooksGrid.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number
+      id: PropTypes.string
     })
   ).isRequired,
   handleBookShelfOnChange: PropTypes.func.isRequired
