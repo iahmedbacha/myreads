@@ -45,11 +45,7 @@ If a book is assigned to a shelf on the main page and that book appears on the s
 - Component state is passed down from parent components to child components. The state variable is not modified directly - setState() function is used correctly.
 Books have the same state on both the search page and the main application page: If a book is on a bookshelf, that is reflected in both locations.
 - The code runs without errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using ```key``` for list items. All code is functional and formatted properly.
-## Contributing
-Contributions are always welcome!
 ## TODO
 - Add tests.
-## Licence
-GNU General Public License v3.0
 ## Credits
-- The starter code that includes CSS and HTML code are provided Udacity.
+- The starter code that includes CSS and HTML code is provided by Udacity.
