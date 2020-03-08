@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/myreads-app/static/css/main.bcafd81e.chunk.css",
-    "main.js": "/myreads-app/static/js/main.98ae6a9a.chunk.js",
-    "main.js.map": "/myreads-app/static/js/main.98ae6a9a.chunk.js.map",
-    "runtime-main.js": "/myreads-app/static/js/runtime-main.48a704a7.js",
-    "runtime-main.js.map": "/myreads-app/static/js/runtime-main.48a704a7.js.map",
-    "static/js/2.f986229f.chunk.js": "/myreads-app/static/js/2.f986229f.chunk.js",
-    "static/js/2.f986229f.chunk.js.map": "/myreads-app/static/js/2.f986229f.chunk.js.map",
-    "index.html": "/myreads-app/index.html",
-    "precache-manifest.c6005cc0c84b5220fc689584f04b148d.js": "/myreads-app/precache-manifest.c6005cc0c84b5220fc689584f04b148d.js",
-    "service-worker.js": "/myreads-app/service-worker.js",
-    "static/css/main.bcafd81e.chunk.css.map": "/myreads-app/static/css/main.bcafd81e.chunk.css.map",
-    "static/js/2.f986229f.chunk.js.LICENSE": "/myreads-app/static/js/2.f986229f.chunk.js.LICENSE",
-    "static/media/App.css": "/myreads-app/static/media/arrow-drop-down.9d4e3f36.svg"
+    "main.css": "/myreads/static/css/main.df622fd9.chunk.css",
+    "main.js": "/myreads/static/js/main.1a0c6b11.chunk.js",
+    "main.js.map": "/myreads/static/js/main.1a0c6b11.chunk.js.map",
+    "runtime-main.js": "/myreads/static/js/runtime-main.ee120b28.js",
+    "runtime-main.js.map": "/myreads/static/js/runtime-main.ee120b28.js.map",
+    "static/js/2.2fef29f9.chunk.js": "/myreads/static/js/2.2fef29f9.chunk.js",
+    "static/js/2.2fef29f9.chunk.js.map": "/myreads/static/js/2.2fef29f9.chunk.js.map",
+    "index.html": "/myreads/index.html",
+    "precache-manifest.5142acdf2ba61c8fcd30802dcdbe7a60.js": "/myreads/precache-manifest.5142acdf2ba61c8fcd30802dcdbe7a60.js",
+    "service-worker.js": "/myreads/service-worker.js",
+    "static/css/main.df622fd9.chunk.css.map": "/myreads/static/css/main.df622fd9.chunk.css.map",
+    "static/js/2.2fef29f9.chunk.js.LICENSE": "/myreads/static/js/2.2fef29f9.chunk.js.LICENSE",
+    "static/media/App.css": "/myreads/static/media/arrow-drop-down.78c6f53b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.48a704a7.js",
-    "static/js/2.f986229f.chunk.js",
-    "static/css/main.bcafd81e.chunk.css",
-    "static/js/main.98ae6a9a.chunk.js"
+    "static/js/runtime-main.ee120b28.js",
+    "static/js/2.2fef29f9.chunk.js",
+    "static/css/main.df622fd9.chunk.css",
+    "static/js/main.1a0c6b11.chunk.js"
   ]
 }
