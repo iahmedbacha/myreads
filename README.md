@@ -47,5 +47,7 @@ Books have the same state on both the search page and the main application page:
 - The code runs without errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using ```key``` for list items. All code is functional and formatted properly.
 ## TODO
 - Add tests.
+## Licence
+GNU General Public License v3.0
 ## Credits
 - The starter code that includes CSS and HTML code is provided by Udacity.
